@@ -41,6 +41,7 @@ armor_pieces = None  # Remember this!!!!!
 armor_df = None
 
 with st.sidebar:
+    st.write('Go to DIM, settings and download the Armor file. Once it has downloaded, click Browse Files and upload')
     uploaded_file = st.file_uploader('Upload CSV File', type='csv')
     if uploaded_file is not None:
         try:
