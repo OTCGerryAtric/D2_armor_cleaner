@@ -3,4 +3,3 @@ pandas==1.5.3
 clipboard==0.0.4
 streamlit==1.19.0
 streamlit_aggrid==0.3.3
-QtPy==2.3.0
