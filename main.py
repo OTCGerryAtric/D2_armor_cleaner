@@ -1,6 +1,7 @@
 import pandas as pd
 import streamlit as st
 import clipboard as cb
+from clipboard import ClipboardException
 from st_aggrid import AgGrid, GridOptionsBuilder, GridUpdateMode
 
 #Set page config
@@ -194,5 +195,10 @@ with st.expander("All Armor"):
     dim_code = (f"id:{export_string}")
 
     if col2.button('Copy selection as DIM Filter'):
-        cb.copy(dim_code)
-        col2.write('String copied to clipboard!')
+        try:
+            cb.copy(dim_code)
+            col2.write('String copied to clipboard!')
+            st.write(dim_code)
+        except ClipboardException:
+            col2.write('Not copied, copy from below')
+            st.write(dim_gicode)
