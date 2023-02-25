@@ -58,7 +58,7 @@ with st.sidebar:
     armor_type = st.sidebar.selectbox('Type', ('All', 'Helmet', 'Gauntlets', 'Chest', 'Legs', 'Class Item'))
     armor_element = st.sidebar.selectbox('Element', ('All', 'Arc', 'Solar', 'Void', 'Stasis'))
 
-with st.expander("Armor Breakdown"):
+with st.expander("Armor Breakdown", expanded=True):
     st.write("This provides a count of all armor owned (only looks at Exotic and Legendary)")
     col1, col2, col3, col4, col5, col6 = st.columns(6)
 
