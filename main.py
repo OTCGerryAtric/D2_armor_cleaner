@@ -199,6 +199,7 @@ with st.expander("All Armor"):
             cb.copy(dim_code)
             col2.write('String copied to clipboard!')
             st.write(dim_code)
+<<<<<<< HEAD
         except ClipboardException:
-            col2.write('Not copied, copy from below')
-            st.write(dim_gicode)
+            col2.write('Copy error, copy from below')
+            st.write(dim_code)
