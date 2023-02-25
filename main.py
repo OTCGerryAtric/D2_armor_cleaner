@@ -1,7 +1,5 @@
 import pandas as pd
 import streamlit as st
-import itertools as it
-import numpy as ny
 import pyperclip as py
 from st_aggrid import AgGrid, GridOptionsBuilder, GridUpdateMode
 
@@ -45,20 +43,19 @@ armor_df = None
 with st.sidebar:
     uploaded_file = st.file_uploader('Upload CSV File', type='csv')
     if uploaded_file is not None:
-        armor_pieces = dim_upload(uploaded_file)
-        st.write("CSV file is loaded")
+        try:
+            armor_pieces = dim_upload(uploaded_file)
+            st.write("CSV file is loaded")
+        except pd.errors.EmptyDataError:
+            st.write('Please upload the CSV file')
+            st.stop()
     else:
-        st.write("No CSV file loaded.")
+        st.write("Please upload the CSV file")
+        st.stop()
     character_select = st.sidebar.selectbox('Character', ('All', 'Hunter', 'Titan', 'Warlock'))
     armor_tier = st.sidebar.selectbox('Tier', ('All', 'Exotic', 'Legendary'))
-    armor_type = st.sidebar.selectbox('Type', ('All', 'Helmet', 'Gauntlets', 'Chest', 'Legs', 'Class Items'))
+    armor_type = st.sidebar.selectbox('Type', ('All', 'Helmet', 'Gauntlets', 'Chest', 'Legs', 'Class Item'))
     armor_element = st.sidebar.selectbox('Element', ('All', 'Arc', 'Solar', 'Void', 'Stasis'))
-
-    filter_reset = st.button('Reset Filters to All') # TODO Need to link this so that it resets the entries for all selects to 'All'
-    if filter_reset:
-        pass
-    else:
-        pass
 
 with st.expander("Armor Breakdown"):
     st.write("This provides a count of all armor owned (only looks at Exotic and Legendary)")
@@ -140,7 +137,6 @@ with st.expander("Armor Breakdown"):
 
 with st.expander("All Armor"):
     st.write("Detailed Armor Stats")
-
     armor_df = armor_pieces
     if character_select == 'All':
         pass
