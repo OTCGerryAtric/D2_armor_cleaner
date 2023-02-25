@@ -136,7 +136,7 @@ with st.expander("Armor Breakdown", expanded=True):
     col6.metric(label="Total Legendary Armor", value=l_h_count + l_g_count + l_c_count + l_l_count + l_ci_count)
     col6.metric(label="Total Armor", value=e_h_count + e_g_count + e_c_count + e_l_count + e_ci_count + l_h_count + l_g_count + l_c_count + l_l_count + l_ci_count)
 
-with st.expander("All Armor"):
+with st.expander("All Armor", expanded=True):
     st.write("Detailed Armor Stats")
     armor_df = armor_pieces
     if character_select == 'All':
