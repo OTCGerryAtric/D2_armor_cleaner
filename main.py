@@ -1,7 +1,6 @@
 import pandas as pd
 import streamlit as st
 import clipboard as cb
-from clipboard import ClipboardException
 from st_aggrid import AgGrid, GridOptionsBuilder, GridUpdateMode
 
 #Set page config
