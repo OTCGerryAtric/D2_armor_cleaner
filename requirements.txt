@@ -1,5 +1,5 @@
 numpy==1.24.2
 pandas==1.5.3
-pyperclip==1.8.2
+clipboard==0.0.4
 streamlit==1.19.0
 streamlit_aggrid==0.3.3
