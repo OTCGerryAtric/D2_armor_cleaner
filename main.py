@@ -4,7 +4,7 @@ import clipboard as cb
 from st_aggrid import AgGrid, GridOptionsBuilder, GridUpdateMode
 
 #Set page config
-st.set_page_config(page_title="Exotic Build Tool", page_icon=None, layout="wide", initial_sidebar_state="expanded", menu_items=None)
+st.set_page_config(page_title="Armor Optimization Tool", page_icon=None, layout="wide", initial_sidebar_state="expanded", menu_items=None)
 
 @st.cache_data
 def dim_upload(file):
