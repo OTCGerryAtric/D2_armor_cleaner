@@ -1,6 +1,6 @@
 import pandas as pd
 import streamlit as st
-import pyperclip as py
+import clipboard as cb
 from st_aggrid import AgGrid, GridOptionsBuilder, GridUpdateMode
 
 #Set page config
@@ -191,8 +191,8 @@ with st.expander("All Armor"):
     export_string = ' OR id:'.join(selected_ids)
 
     # display the selected ids and the export string
-    tester = (f"id:{export_string}")
+    dim_code = (f"id:{export_string}")
 
     if col2.button('Copy selection as DIM Filter'):
-        py.copy(tester)
+        cb.copy(dim_code)
         col2.write('String copied to clipboard!')
